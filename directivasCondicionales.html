@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+
+</head>
+<body>
+    <div id="app">
+        <p v-if='estado'>{{mensaje}}</p>
+        <p v-else>Lorem ipsum dolor sit.</p>
+        <input type="checkbox" v-model="estado">
+        <p v-show="estado">lalalala</p>
+        <p v-if="vocal==='a'">a</p>
+        <p v-else-if="vocal==='e'">e</p>
+        <p v-else-if="vocal==='h'">h</p>
+        <p v-else>ninguno de los anteriores</p>
+        <p v-for=""></p>
+        <input type="text" v-model="dia">
+        <p v-if="dia==='0'">a</p>
+        <p v-else-if="dia==='1'">Lunes</p>
+        <p v-else-if="dia==='2'">Martes</p>
+        <p v-else-if="dia==='3'">Miercoles</p>
+        <p v-else-if="dia==='4'">Jueves</p>
+        <p v-else-if="dia==='5'">Viernes</p>
+        <p v-else-if="dia==='6'">Sabado</p>
+        <p v-else-if="dia==='7'">Domingo</p>
+        <p v-else>Dia no reconocido</p>
+        <ul>
+            <li v-for="num of numeros">{{num}}</li>
+        </ul>
+        <p v-for="(val,key) in persona">{{key}} {{val}} </p>
+        <p v-for="(val,key, index) in persona">{{index+1}} {{key}} {{val}} </p>
+        <p v-for="(val, key) in personas"> {{val["nombre"]}} {{val["apellido"]}} {{val["ci"]}}</p>
+        <ul v-for="persona in personas">
+            <li v-for="(val,key,index) in persona">{{index+1}} <b>{{key}}</b> {{val}}</li>
+            <!-- <li v-for="(val,key,index) in persona">{{val}}</li> -->
+        </ul>
+        <!-- <pre>
+            {{this.$data}}
+        </pre> -->
+        <button v-on:click="mostrar">hola</button>
+        <button @click="mostrar">otro click</button>
+        <button @click="incrementar">contador: {{contador}}</button>
+        <button @click="incrementar2(2)">contador: {{contador2}}</button>
+        <button @click="contador3++">contador: {{contador3}}</button>
+    </div>
+    <script src="directivasCondicionales.js"></script>
+</body>
+</html>
