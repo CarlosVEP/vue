@@ -1,21 +1,22 @@
-var app=new Vue({
-    el:"#app",
+var app = new Vue({
+    el: "#app",
     data: {
-        contador: 0
+        contador: 0,
+        mensaje: "Hooola"
     },
-    computed:{
-        // incrementar:function(){
-        //     return this.contador++
-        // }
+    computed: {
+        volcar:function(){
+            return this.mensaje.split('').reverse().join('')
+        },
         incrementar: {
             // getter
             get: function () {
-              return this.contador
+                return this.contador
             },
             // setter
             set: function (newValue) {
-              this.contador++
+                this.contador++
             }
-          }
+        }
     }
 })

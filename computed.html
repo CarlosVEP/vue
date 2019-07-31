@@ -11,6 +11,9 @@
 </head>
 <body>
     <div id="app">
+        <input type="text" v-model="mensaje">
+        <p>{{mensaje}} </p>
+        <p>{{volcar}} </p>
         <button @click="incrementar=3">incrementar</button>
         <h1>Contador: {{incrementar}}</h1>
     </div>
